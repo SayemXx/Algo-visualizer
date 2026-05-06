@@ -7,10 +7,10 @@ from tkinter import ttk, messagebox
 import mysql.connector
 from mysql.connector import Error
 
-# =========================================================
+
 # MySQL CONFIGURATION
 # Change these values to match your MySQL setup
-# =========================================================
+
 DB_CONFIG = {
     "host": "localhost",
     "user": "root",
@@ -98,9 +98,9 @@ algorithm_steps = {
 }
 
 
-# =========================================================
+
 # DATABASE HELPERS
-# =========================================================
+
 def get_server_connection(with_database=True):
     config = DB_CONFIG.copy()
     if not with_database:
@@ -207,9 +207,9 @@ def execute_query(query, params=None, fetchone=False, fetchall=False, commit=Fal
             conn.close()
 
 
-# =========================================================
+
 # USER / SESSION HELPERS
-# =========================================================
+
 def hash_password(password):
     return hashlib.sha256(password.encode("utf-8")).hexdigest()
 
@@ -421,9 +421,8 @@ def get_weekly_history(user_id):
     return rows
 
 
-# =========================================================
 # UI HELPERS
-# =========================================================
+
 def open_user_history_window():
     weekly_rows = get_weekly_history(current_user_id)
 
